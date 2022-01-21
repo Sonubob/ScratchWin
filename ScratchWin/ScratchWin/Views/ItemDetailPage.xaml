@@ -5,10 +5,13 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Description}" FontSize="Small"/>
+       
+        <Label Text="You have won ......" FontSize="Medium" />
+        <Label Text="{Binding Name}" FontSize="Medium" />
+        <Image Source="{Binding Description}" WidthRequest="80" VerticalOptions="FillAndExpand" HeightRequest="84" />
+
     </StackLayout>
-    
+
+   
+
 </ContentPage>

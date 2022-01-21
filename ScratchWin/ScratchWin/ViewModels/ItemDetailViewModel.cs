@@ -12,6 +12,8 @@ namespace ScratchWin.ViewModels
         private string itemId;
         private string text;
         private string description;
+        public string name;
+
         public string Id { get; set; }
 
         public string Text
@@ -24,6 +26,12 @@ namespace ScratchWin.ViewModels
         {
             get => description;
             set => SetProperty(ref description, value);
+        }
+
+        public string Name
+        {
+            get => name;
+            set => SetProperty(ref name, value);
         }
 
         public string ItemId
@@ -47,6 +55,7 @@ namespace ScratchWin.ViewModels
                 Id = item.Id;
                 Text = item.Text;
                 Description = item.Description;
+                Name = item.Name;
             }
             catch (Exception)
             {
