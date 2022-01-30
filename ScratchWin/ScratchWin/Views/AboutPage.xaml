@@ -30,13 +30,13 @@
         <ScrollView Grid.Row="1">
             <StackLayout   BackgroundColor="#cd00cd" Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 <Label Text="Many many happy returns of the day Meemin!" FontSize="Title" TextColor="#ff94ff"/>
-                <Label TextColor="#ffceff" Text="The next five days are going to be epic!In the next page, you have a set of 5 scratch card. You can open one scratch card per day." FontSize="16" Padding="0,0,0,0"/>
+                <Label TextColor="#ffceff" Text="The next five days are going to be epic!In the next page, you have a set of 5 day card. You can open one card per day." FontSize="16" Padding="0,0,0,0"/>
                 <Label FontSize="18" Padding="0,24,0,0" TextColor="#ffceff">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
                               
-                                <Span Text="No peeking at the next day scratch entry!!" FontAttributes="Bold"/>
+                                <Span Text="No peeking at the next day entry!!" FontAttributes="Bold"/>
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>

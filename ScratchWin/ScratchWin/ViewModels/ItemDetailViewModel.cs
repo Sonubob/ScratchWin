@@ -56,6 +56,11 @@ namespace ScratchWin.ViewModels
                 Text = item.Text;
                 Description = item.Description;
                 Name = item.Name;
+
+                item.IsOpened = true;
+                item.DateOpened = DateTime.Today;
+
+                await DataStore.UpdateItemAsync(item);
             }
             catch (Exception)
             {

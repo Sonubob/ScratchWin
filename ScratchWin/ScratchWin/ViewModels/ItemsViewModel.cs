@@ -78,9 +78,22 @@ namespace ScratchWin.ViewModels
         {
             if (item == null)
                 return;
+            var blocked = false;
+            var items = await DataStore.GetItemsAsync(true);
+            foreach (var entry in items)
+            {
+                if(entry.DateOpened == DateTime.Today)
+                {
+                    blocked = true;
+                    break;
+                }
+            }
+            if (!blocked || item.IsOpened)
+            {
+                // This will push the ItemDetailPage onto the navigation stack
+                await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
 
-            // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            }
         }
     }
 }

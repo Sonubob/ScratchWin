@@ -14,11 +14,11 @@ namespace ScratchWin.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 1", Description="bracelet.jpg", Name = "BRACELET!!" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 2", Description="buddha.jpg", Name = "Figurine!!" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 3", Description="earrings.jpg", Name = "Earrings!!" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 4", Description="rings.jpg", Name = "RING!!" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 5", Description="hairstuff.jpg", Name = "Hair Accessories!!" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 1", Description="bracelet.jpg", Name = "BRACELET!!", DateOpened = DateTime.Today.AddDays(-1), IsOpened = false },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 2", Description="buddha.jpg", Name = "Figurine!!",DateOpened = DateTime.Today.AddDays(-1), IsOpened = false   },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 3", Description="earrings.jpg", Name = "Earrings!!",DateOpened = DateTime.Today.AddDays(-1), IsOpened = false    },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 4", Description="rings.jpg", Name = "RING!!" ,DateOpened = DateTime.Today.AddDays(-1) , IsOpened = false   },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Day 5", Description="hairstuff.jpg", Name = "Hair Accessories!!",DateOpened = DateTime.Today.AddDays(-1) , IsOpened = false    },
             
                
             };
