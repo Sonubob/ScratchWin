@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using ScratchWin.Models;
+using SQLite;
 using Xamarin.Forms;
 
 namespace ScratchWin.ViewModels
@@ -13,7 +14,7 @@ namespace ScratchWin.ViewModels
         private string text;
         private string description;
         public string name;
-
+       
         public string Id { get; set; }
 
         public string Text
@@ -52,7 +53,7 @@ namespace ScratchWin.ViewModels
             try
             {
                 var item = await DataStore.GetItemAsync(itemId);
-                Id = item.Id;
+                Id = item.Id.ToString();
                 Text = item.Text;
                 Description = item.Description;
                 Name = item.Name;
