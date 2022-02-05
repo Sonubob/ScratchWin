@@ -41,10 +41,14 @@ namespace ScratchWin.Services
 
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            dbConnection.Update(item);
-           // var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-           // items.Remove(oldItem);
-           // items.Add(item);
+            var isopen = item.IsOpened ? "1" : "0";
+            //dbConnection.Update(item);
+            dbConnection.Execute("update [TblBdayGift] set DateOpened =?,IsOpened = ? where Id = ?  " , item.DateOpened.ToString(), isopen,
+               item.Id.ToString());
+            
+            // var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            // items.Remove(oldItem);
+            // items.Add(item);
 
             return await Task.FromResult(true);
         }

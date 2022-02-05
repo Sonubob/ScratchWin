@@ -14,10 +14,7 @@
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-    <ContentView>
-        <Image Source="giftbg.jfif"
-           Aspect="AspectFill"/>
-    </ContentView>
+   
     
     <RefreshView x:DataType="local:ItemsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <CollectionView x:Name="ItemsListView"
@@ -29,7 +26,7 @@
                         <Label Text="{Binding Text}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
+                            FontSize="Subtitle" TextColor="Black" />
                       
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 

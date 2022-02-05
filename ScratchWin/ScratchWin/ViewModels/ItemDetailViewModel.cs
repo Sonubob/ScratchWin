@@ -14,8 +14,15 @@ namespace ScratchWin.ViewModels
         private string text;
         private string description;
         public string name;
-       
-        public string Id { get; set; }
+        public Guid id;
+        private bool isOpened;
+        private DateTime dateOpened;
+
+        public Guid Id
+        {
+            get => id;
+            set => SetProperty(ref id, value);
+        }
 
         public string Text
         {
@@ -33,6 +40,16 @@ namespace ScratchWin.ViewModels
         {
             get => name;
             set => SetProperty(ref name, value);
+        }
+        public bool IsOpened
+        {
+            get => isOpened;
+            set => SetProperty(ref isOpened, value);
+        }
+        public DateTime DateOpened
+        {
+            get => dateOpened;
+            set => SetProperty(ref dateOpened, value);
         }
 
         public string ItemId
@@ -53,19 +70,20 @@ namespace ScratchWin.ViewModels
             try
             {
                 var item = await DataStore.GetItemAsync(itemId);
-                Id = item.Id.ToString();
+                Id = item.Id;
                 Text = item.Text;
                 Description = item.Description;
                 Name = item.Name;
-
+              
                 item.IsOpened = true;
                 item.DateOpened = DateTime.Today;
-
-                await DataStore.UpdateItemAsync(item);
+                IsOpened = item.IsOpened;
+                DateOpened = item.DateOpened;
+              await DataStore.UpdateItemAsync(item);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Debug.WriteLine("Failed to Load Item");
+                Debug.WriteLine("Failed to Load Item"+ex.InnerException.Message);
             }
         }
     }

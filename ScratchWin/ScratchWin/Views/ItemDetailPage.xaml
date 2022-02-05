@@ -6,8 +6,8 @@
 
     <StackLayout Spacing="20" Padding="15">
        
-        <Label Text="You have won ......" FontSize="Medium" />
-        <Label Text="{Binding Name}" FontSize="Medium" />
+        <Label Text="You have won ......" FontSize="Medium" TextColor="BlueViolet" />
+        <Label Text="{Binding Name}" FontSize="Medium" TextColor="BlueViolet" />
         <Image Source="{Binding Description}" WidthRequest="80" VerticalOptions="FillAndExpand" HeightRequest="84" />
 
     </StackLayout>

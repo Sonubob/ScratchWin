@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using ScratchWin.Models;
 using ScratchWin.Services;
 using SQLite.Net.Platform.XamarinAndroid;
 using Xamarin.Forms;
@@ -30,9 +31,9 @@ namespace ScratchWin.Droid.DBData
 
             
             var sqliteFilename = "BdaygiftDB.db";
-         
-            string documentsDirectoryPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            var path = Path.Combine(documentsDirectoryPath, sqliteFilename);
+
+            string directory = Android.App.Application.Context.GetExternalFilesDir(null).ToString();
+            var path = Path.Combine(directory, sqliteFilename);
 
             // This is where we copy in our pre-created database
             if (!File.Exists(path))
@@ -52,7 +53,7 @@ namespace ScratchWin.Droid.DBData
             }
             var plat = new SQLitePlatformAndroid();
             var conn = new SQLite.SQLiteConnection(path, false);
-
+           // conn.CreateTable<Item>();
             return conn;
         }
 
